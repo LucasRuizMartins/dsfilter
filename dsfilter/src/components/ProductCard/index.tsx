@@ -1,7 +1,7 @@
 import { ProductDTO } from "../../models/product";
-
+import "./styles.css"
 type Props = {
-  product?: ProductDTO;
+  product: ProductDTO;
 };
 
 export function ProductCard({ product }: Props) {

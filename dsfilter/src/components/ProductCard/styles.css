@@ -1,0 +1,26 @@
+.product-card {
+  padding: 10px;
+  border: 1px solid #55bc04;
+  width: 920px;
+  height: 53px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.dsf-flex {
+  padding: 10px;
+  align-items: center;
+  display: flex;
+}
+
+.product-name {
+  color: #6f6f6f;
+  font-size: 12px;
+}
+
+.product-price {
+  color: #55bc04;
+  font-size: 16px;
+  font-weight: 700;
+}
