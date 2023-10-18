@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useEffect, useContext } from "react";
 import { ProductDTO } from "../../models/product";
 import { Filter } from "../Filter";
@@ -38,6 +39,34 @@ export function ListingBody() {
           ))}
         </div>
       </div>
+=======
+import { useEffect, useState } from "react";
+import { Filter } from "../Filter";
+import { Listing } from "../Listing";
+import * as productService from "../../services/product-service";
+import { ProductDTO } from "../../models/product";
+
+export function ListingBody() {
+  const [products, setProducts] = useState<ProductDTO[]>([]);
+  const [minValue, setMinValue] = useState(0);
+  const [maxValue, setMaxValue] = useState(Number.MAX_VALUE);
+
+  useEffect(() => {
+    productService.findByPrice(minValue, maxValue).then((response) => {
+      setProducts(response.data.content);
+    });
+  }, []);
+
+  function handleSearch(minValue, maxValue) {
+    setMinValue(minValue);
+    setMaxValue(maxValue);
+  }
+
+  return (
+    <>
+      <Filter onFilter={handleSearch}></Filter>
+      <Listing></Listing>
+>>>>>>> ab1a0d2b7e3c4b9af391d25738474772e06cd6b9
     </>
   );
 }
